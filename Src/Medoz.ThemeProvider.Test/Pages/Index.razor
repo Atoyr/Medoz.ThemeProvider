@@ -2,8 +2,137 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1 style="color: var(--primary);">Hello, world!</h1>
 
-Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+<div style="display: grid;
+    grid-template-columns: repeat(19,minmax(0,1fr));
+    grid-template-rows: -webkit-min-content repeat(14,1fr);
+    grid-template-rows: min-content repeat(14,1fr);
+    grid-auto-flow: column;
+    height: 100%;">
+    <label>Red</label>
+    <div style="@Style(Colors.Solid.Black, Colors.Solid.Red)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Red.Lighten5)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Red.Lighten4)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Red.Lighten3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Red.Lighten2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Red.Lighten1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Red.Darken1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Red.Darken2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Red.Darken3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Red.Darken4)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Red.Accent1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Red.Accent2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Red.Accent3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Red.Accent4)"></div>
+    <label>Pink</label>
+    <div style="@Style(Colors.Solid.Black, Colors.Solid.Pink)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Pink.Lighten5)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Pink.Lighten4)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Pink.Lighten3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Pink.Lighten2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Pink.Lighten1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Pink.Darken1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Pink.Darken2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Pink.Darken3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Pink.Darken4)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Pink.Accent1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Pink.Accent2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Pink.Accent3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Pink.Accent4)"></div>
+    <label>Purple</label>
+    <div style="@Style(Colors.Solid.Black, Colors.Solid.Purple)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Purple.Lighten5)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Purple.Lighten4)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Purple.Lighten3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Purple.Lighten2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Purple.Lighten1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Purple.Darken1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Purple.Darken2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Purple.Darken3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Purple.Darken4)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Purple.Accent1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Purple.Accent2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Purple.Accent3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Purple.Accent4)"></div>
+    <label>DeepPurple</label>
+    <div style="@Style(Colors.Solid.Black, Colors.Solid.DeepPurple)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.DeepPurple.Lighten5)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.DeepPurple.Lighten4)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.DeepPurple.Lighten3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.DeepPurple.Lighten2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.DeepPurple.Lighten1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.DeepPurple.Darken1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.DeepPurple.Darken2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.DeepPurple.Darken3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.DeepPurple.Darken4)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.DeepPurple.Accent1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.DeepPurple.Accent2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.DeepPurple.Accent3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.DeepPurple.Accent4)"></div>
+    <label>Indigo</label>
+    <div style="@Style(Colors.Solid.Black, Colors.Solid.Indigo)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Indigo.Lighten5)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Indigo.Lighten4)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Indigo.Lighten3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Indigo.Lighten2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Indigo.Lighten1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Indigo.Darken1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Indigo.Darken2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Indigo.Darken3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Indigo.Darken4)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Indigo.Accent1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Indigo.Accent2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Indigo.Accent3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Indigo.Accent4)"></div>
+    <label>Blue</label>
+    <div style="@Style(Colors.Solid.Black, Colors.Solid.Blue)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Blue.Lighten5)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Blue.Lighten4)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Blue.Lighten3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Blue.Lighten2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Blue.Lighten1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Blue.Darken1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Blue.Darken2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Blue.Darken3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Blue.Darken4)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Blue.Accent1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Blue.Accent2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Blue.Accent3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Blue.Accent4)"></div>
+    <!--<label>LightBlue</label>
+    <div style="@Style(Colors.Solid.Black, Colors.Solid.LightBlue)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.LightBlue.Lighten5)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.LightBlue.Lighten4)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.LightBlue.Lighten3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.LightBlue.Lighten2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.LightBlue.Lighten1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.LightBlue.Darken1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.LightBlue.Darken2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.LightBlue.Darken3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.LightBlue.Darken4)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.LightBlue.Accent1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.LightBlue.Accent2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.LightBlue.Accent3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.LightBlue.Accent4)"></div>
+    <label>Cyan</label>
+    <div style="@Style(Colors.Solid.Black, Colors.Solid.Cyan)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Cyan.Lighten5)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Cyan.Lighten4)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Cyan.Lighten3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Cyan.Lighten2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Cyan.Lighten1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Cyan.Darken1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Cyan.Darken2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Cyan.Darken3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Cyan.Darken4)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Cyan.Accent1)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Cyan.Accent2)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Cyan.Accent3)"></div>
+    <div style="@Style(Colors.Solid.Black, Colors.Cyan.Accent4)"></div>
+    -->
+
+</div>

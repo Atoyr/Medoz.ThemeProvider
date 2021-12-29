@@ -1,19 +1,26 @@
 ﻿@inherits LayoutComponentBase
+@using Medoz.ThemeProvider
 
-<PageTitle>Medoz.ThemeProvider.Test</PageTitle>
+<ThemeProvider Theme="@theme">
+    <PageTitle>Medoz.ThemeProvider.Test</PageTitle>
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+    <div class="page">
+        <div class="sidebar">
+            <NavMenu />
         </div>
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+        <main>
+            <div class="top-row px-4">
+                <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            </div>
+
+            <article class="content px-4">
+                @Body
+            </article>
+        </main>
+    </div>
+</ThemeProvider>
+
+@code {
+    Theme theme { get; set; } = new Theme(){ Primary = Colors.Blue.Lighten1, Background = Colors.Solid.White};
+}
