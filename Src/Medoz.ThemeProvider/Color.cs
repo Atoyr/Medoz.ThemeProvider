@@ -11,23 +11,28 @@ public class Color
         ColorName = colorName;
     }
 
+    public static Color Empty() => new Color("","");
+
     public bool IsEmpty() => string.IsNullOrEmpty(ColorCode) && String.IsNullOrEmpty(ColorName);
 
-    public override bool Equals(object obj)
+#nullable enable
+    public override bool Equals(object? obj)
     {
-        if (obj == null || GetType() != obj.GetType())
+        if (obj is not null && obj is Color target)
+        {
+            return target.ColorCode == this.ColorCode && target.ColorName == this.ColorName;
+        }
+        else
         {
             return false;
         }
-
-        return (obj as Color).ColorCode == this.ColorCode && (obj as Color).ColorName == this.ColorName;
     }
 
     // override object.GetHashCode
     public override int GetHashCode()
     {
         // TODO: write your implementation of GetHashCode() here
-        throw new System.NotImplementedException();
         return base.GetHashCode();
     }
+#nullable disable
 }
