@@ -99,7 +99,7 @@ public class Theme
         }
         if (!PrimaryVariant.IsEmpty())
         {
-            sb.AppendLine($"--primary-variant {PrimaryVariant.ColorCode}; ");
+            sb.AppendLine($"--primary-variant: {PrimaryVariant.ColorCode}; ");
         }
         if (!OnPrimary.IsEmpty())
         {
@@ -111,7 +111,7 @@ public class Theme
         }
         if (!SecondaryVariant.IsEmpty())
         {
-            sb.AppendLine($"--secondary-variant {SecondaryVariant.ColorCode}; ");
+            sb.AppendLine($"--secondary-variant: {SecondaryVariant.ColorCode}; ");
         }
         if (!OnSecondary.IsEmpty())
         {
