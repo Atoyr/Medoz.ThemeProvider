@@ -4,6 +4,7 @@ using System.Text;
 
 public class Theme
 {
+#pragma warning disable CS8618
     public string Class { get; set; }
     /// <summary>
     /// The theme primary color
@@ -69,7 +70,7 @@ public class Theme
     {
         Initialize();
     }
-
+#pragma warning restore CS8618
     protected virtual void Initialize()
     {
         Class = string.Empty;

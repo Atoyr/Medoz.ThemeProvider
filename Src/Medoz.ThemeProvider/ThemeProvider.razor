@@ -1,6 +1,9 @@
 @using Microsoft.AspNetCore.Components
 
-@((MarkupString)Theme?.GetStyleTag())
+@if (Theme is not null)
+{
+    @((MarkupString)Theme.GetStyleTag())
+}
 <CascadingValue Value="@Theme">
     @ChildContent
 </CascadingValue>

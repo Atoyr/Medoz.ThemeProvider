@@ -15,9 +15,10 @@ namespace Medoz.ThemeProvider.Test.Pages;
 
 public partial class Index : ComponentBase
 {
+#pragma warning disable CS8618
     [CascadingParameter]
     public Theme Theme { get; set; }
-
+#pragma warning restore CS8618
     protected string Style(Color tc, Color bg)
     {
         return $"display: flex; flex: 0 0 20%; color: {tc.ColorCode}; background: {bg.ColorCode}; min-width: 20px; min-height: 20px;";

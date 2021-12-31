@@ -16,8 +16,11 @@ public class ThemeService : IThemeService
         rootTheme = new Theme();
         themeDictionary = new Dictionary<string, Theme>();
     }
-
+#pragma warning disable CS8618
+    protected Theme rootTheme { get; set; }
+    protected IDictionary<string, Theme> themeDictionary { get; set; }
     private Theme _theme;
+#pragma warning restore CS8618
     public Theme Theme
     {
         set
@@ -58,9 +61,6 @@ public class ThemeService : IThemeService
         }
         get => _theme;
     }
-
-    protected Theme rootTheme { get; set; }
-    protected IDictionary<string, Theme> themeDictionary { get; set; }
 
     public void AddTheme(Theme theme)
     {
