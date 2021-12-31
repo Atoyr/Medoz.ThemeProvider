@@ -11,7 +11,7 @@ public class Color
         ColorName = colorName;
     }
 
-    public static Color Empty() => new Color("","");
+    public static Color Empty() => new("","");
 
     public bool IsEmpty() => string.IsNullOrEmpty(ColorCode) && String.IsNullOrEmpty(ColorName);
 
@@ -26,13 +26,6 @@ public class Color
         {
             return false;
         }
-    }
-
-    // override object.GetHashCode
-    public override int GetHashCode()
-    {
-        // TODO: write your implementation of GetHashCode() here
-        return base.GetHashCode();
     }
 #nullable disable
 }
