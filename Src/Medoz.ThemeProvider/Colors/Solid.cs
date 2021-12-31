@@ -12,6 +12,9 @@ public static partial class Colors
         public static Color DeepPurple { get; } = new Color("#673AB7", "deep-purple");
         public static Color Indigo { get; } = new Color("#3F51B5", "indigo");
         public static Color Blue { get; } = new Color("#2196F3", "blue");
+        public static Color LightBlue { get; } = new Color("#03A9F4", "light-blue");
+        public static Color Cyan { get; } = new Color("#00BCD4", "cyan");
+        public static Color Teal { get; } = new Color("#009688", "teal");
         public static Color Green { get; } = new Color("#4CAF50", "green");
         public static Color LightGreen { get; } = new Color("#8BC34A", "light-green");
         public static Color Lime { get; } = new Color("#CDDC39", "lime");
