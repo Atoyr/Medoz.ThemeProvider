@@ -4,67 +4,88 @@ using System.Text;
 
 public class Theme
 {
+    public string Class { get; set; }
     /// <summary>
     /// The theme primary color
     /// </summary>
-    public Color Primary { get; set; } = Color.Empty();
+    public Color Primary { get; set; }
 
     /// <summary>
     /// The theme primary variant color
     /// </summary>
-    public Color PrimaryVariant { get; set; } = Color.Empty();
+    public Color PrimaryVariant { get; set; }
 
     /// <summary>
     /// Text color on top of a primary background
     /// </summary>
-    public Color OnPrimary { get; set; } = Color.Empty();
+    public Color OnPrimary { get; set; }
 
     /// <summary>
     /// The theme secondary color
     /// </summary>
-    public Color Secondary { get; set; } = Color.Empty();
+    public Color Secondary { get; set; }
 
     /// <summary>
     /// The theme secondary variant color
     /// </summary>
-    public Color SecondaryVariant { get; set; } = Color.Empty();
+    public Color SecondaryVariant { get; set; }
 
     /// <summary>
     /// Text color on top of a secondary background
     /// </summary>
-    public Color OnSecondary { get; set; } = Color.Empty();
+    public Color OnSecondary { get; set; }
 
     /// <summary>
     /// The theme background color
     /// </summary>
-    public Color Background { get; set; } = Color.Empty();
+    public Color Background { get; set; }
 
     /// <summary>
     /// Text color on top of a background
     /// </summary>
-    public Color OnBackground { get; set; } = Color.Empty();
+    public Color OnBackground { get; set; }
 
     /// <summary>
     /// The theme surface color
     /// </summary>
-    public Color Surface { get; set; } = Color.Empty();
+    public Color Surface { get; set; }
 
     /// <summary>
     /// Text color on top of a surface background
     /// </summary>
-    public Color OnSurface { get; set; } = Color.Empty();
+    public Color OnSurface { get; set; }
 
     /// <summary>
     /// The theme error color
     /// </summary>
-    public Color Error { get; set; } = Color.Empty();
+    public Color Error { get; set; }
 
     /// <summary>
     /// Text color on top of a error background
     /// </summary>
-    public Color OnError { get; set; } = Color.Empty();
+    public Color OnError { get; set; }
 
-    public Theme() { }
+    public Theme()
+    {
+        Initialize();
+    }
+
+    protected virtual void Initialize()
+    {
+        Class = string.Empty;
+        Primary = Color.Empty;
+        PrimaryVariant = Color.Empty;
+        OnPrimary = Color.Empty;
+        Secondary = Color.Empty;
+        SecondaryVariant = Color.Empty;
+        OnSecondary = Color.Empty;
+        Background = Color.Empty;
+        OnBackground = Color.Empty;
+        Surface = Color.Empty;
+        OnSurface = Color.Empty;
+        Error = Color.Empty;
+        OnError = Color.Empty;
+    }
 
     public event EventHandler<EventArgs>? Changed;
 
@@ -127,7 +148,14 @@ public class Theme
     {
         var sb = new StringBuilder();
         sb.AppendLine("<style>");
-        sb.AppendLine(":root");
+        if (string.IsNullOrWhiteSpace(Class))
+        {
+            sb.AppendLine(":root");
+        }
+        else
+        {
+            sb.AppendLine($".{Class.Split(' ')[0]}");
+        }
         sb.AppendLine("{");
         sb.AppendLine(GenerateStyle());
         sb.AppendLine("}");

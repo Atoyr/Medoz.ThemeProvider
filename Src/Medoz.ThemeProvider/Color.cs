@@ -11,7 +11,7 @@ public class Color
         ColorName = colorName;
     }
 
-    public static Color Empty() => new("","");
+    public static Color Empty { get => new("",""); }
 
     public bool IsEmpty() => string.IsNullOrEmpty(ColorCode) && String.IsNullOrEmpty(ColorName);
 
