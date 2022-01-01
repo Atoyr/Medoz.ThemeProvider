@@ -5,12 +5,12 @@
     <PageTitle>Medoz.ThemeProvider.Test</PageTitle>
 
     <div class="page">
-        <div class="sidebar">
+        <div style="background-color: var(--primary-variant); color: var(--on-primary); height: 100vh;">
             <NavMenu />
         </div>
 
         <main>
-            <div class="top-row px-4">
+            <div class="top-row px-4" style="background-color: var(--primary); color: var(--on-primary);">
                 <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
             </div>
 
@@ -22,5 +22,11 @@
 </ThemeProvider>
 
 @code {
-    Theme theme { get; set; } = new Theme(){ Primary = Colors.Blue.Lighten1, Background = Colors.Solid.White};
+    Theme theme { get; set; } = new Theme()
+    {
+        Primary = Colors.Orange.Darken5,
+        PrimaryVariant = Colors.Orange.Darken2,
+        OnPrimary = Colors.Solid.White,
+        Background = Colors.Solid.White,
+        OnBackground = Colors.Solid.Black };
 }
