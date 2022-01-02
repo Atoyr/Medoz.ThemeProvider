@@ -1,4 +1,5 @@
 # Medoz.ThemeProvider
+[![Nuget](https://img.shields.io/nuget/v/Medoz.ThemeProvider)](https://www.nuget.org/packages/Medoz.ThemeProvider/)
 
 ## Material design theme for Blazor
 Provides material design colors and themes.
