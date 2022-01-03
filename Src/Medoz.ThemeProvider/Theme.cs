@@ -169,6 +169,23 @@ public class Theme
         OnChanged();
     }
 
+    public void Copy(Theme from)
+    {
+        this.Class = from.Class;
+        this.Primary = from.Primary;
+        this.PrimaryVariant = from.PrimaryVariant;
+        this.OnPrimary = from.OnPrimary;
+        this.Secondary = from.Secondary;
+        this.SecondaryVariant = from.SecondaryVariant;
+        this.OnSecondary = from.OnSecondary;
+        this.Background = from.Background;
+        this.OnBackground = from.OnBackground;
+        this.Surface = from.Surface;
+        this.OnSurface = from.OnSurface;
+        this.Error = from.Error;
+        this.OnError = from.OnError;
+    }
+
     protected virtual void OnChanged()
     {
         Changed?.Invoke(this, EventArgs.Empty);
