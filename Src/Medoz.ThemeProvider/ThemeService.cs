@@ -26,19 +26,7 @@ public class ThemeService : IThemeService
         {
             if (value is not null)
             {
-                _theme.Class = value.Class;
-                _theme.Primary = value.Primary;
-                _theme.PrimaryVariant = value.PrimaryVariant;
-                _theme.OnPrimary = value.OnPrimary;
-                _theme.Secondary = value.Secondary;
-                _theme.SecondaryVariant = value.SecondaryVariant;
-                _theme.OnSecondary = value.OnSecondary;
-                _theme.Background = value.Background;
-                _theme.OnBackground = value.OnBackground;
-                _theme.Surface = value.Surface;
-                _theme.OnSurface = value.OnSurface;
-                _theme.Error = value.Error;
-                _theme.OnError = value.OnError;
+                _theme.Copy(value);
             }
             else
             {
