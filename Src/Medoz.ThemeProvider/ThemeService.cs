@@ -5,22 +5,21 @@ using System.Collections.Generic;
 
 public class ThemeService : IThemeService
 {
+#pragma warning disable CS8618
     public ThemeService()
     {
         Initialize();
     }
-
+#pragma warning restore CS8618
     protected virtual void Initialize()
     {
         _theme = new Theme();
         rootTheme = new Theme();
         themeDictionary = new Dictionary<string, Theme>();
     }
-#pragma warning disable CS8618
     protected Theme rootTheme { get; set; }
     protected IDictionary<string, Theme> themeDictionary { get; set; }
     private Theme _theme;
-#pragma warning restore CS8618
     public Theme Theme
     {
         set

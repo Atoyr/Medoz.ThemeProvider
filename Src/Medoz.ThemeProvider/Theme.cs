@@ -4,7 +4,6 @@ using System.Text;
 
 public class Theme
 {
-#pragma warning disable CS8618
     public string Class { get; set; }
     /// <summary>
     /// The theme primary color
@@ -66,6 +65,7 @@ public class Theme
     /// </summary>
     public Color OnError { get; set; }
 
+#pragma warning disable CS8618
     public Theme()
     {
         Initialize();
