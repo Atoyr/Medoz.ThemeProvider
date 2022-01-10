@@ -1,6 +1,7 @@
 namespace Medoz.ThemeProvider;
 using System;
 using System.Text;
+using System.Text.RegularExpressions;
 
 public class Theme
 {
@@ -65,6 +66,159 @@ public class Theme
     /// </summary>
     public Color OnError { get; set; }
 
+    private const string DEFAULT_PRIMARY_CLASS_NAME = "theme__primary";
+    private string _primaryClassName = DEFAULT_PRIMARY_CLASS_NAME;
+    public string PrimaryClassName
+    {
+        get => _primaryClassName;
+        set
+        {
+            if(string.IsNullOrEmpty(value))
+            {
+                _primaryClassName = DEFAULT_PRIMARY_CLASS_NAME;
+            }
+            else if (hasSpace(value))
+            {
+                throw new Exception();
+            }
+            else
+            {
+                _primaryClassName = value;
+            }
+        }
+    }
+
+    private const string DEFAULT_PRIMARY_VARIANT_CLASS_NAME = "theme__primary-variant";
+    private string _primaryVariantClassName = DEFAULT_PRIMARY_VARIANT_CLASS_NAME;
+    public string PrimaryVariantClassName
+    {
+        get => _primaryVariantClassName;
+        set
+        {
+            if(string.IsNullOrEmpty(value))
+            {
+                _primaryVariantClassName = DEFAULT_PRIMARY_VARIANT_CLASS_NAME;
+            }
+            else if (hasSpace(value))
+            {
+                throw new Exception();
+            }
+            else
+            {
+                _primaryVariantClassName = value;
+            }
+        }
+    }
+
+    private const string DEFAULT_SECONDARY_CLASS_NAME = "theme__secondary";
+    private string _secondaryClassName = DEFAULT_SECONDARY_CLASS_NAME;
+    public string SecondaryClassName
+    {
+        get => _secondaryClassName;
+        set
+        {
+            if(string.IsNullOrEmpty(value))
+            {
+                _secondaryClassName = DEFAULT_SECONDARY_CLASS_NAME;
+            }
+            else if (hasSpace(value))
+            {
+                throw new Exception();
+            }
+            else
+            {
+                _secondaryClassName = value;
+            }
+        }
+    }
+
+    private const string DEFAULT_SECONDARY_VARIANT_CLASS_NAME = "theme__secondary-variant";
+    private string _secondaryVariantClassName = DEFAULT_SECONDARY_VARIANT_CLASS_NAME;
+    public string SecondaryVariantClassName
+    {
+        get => _secondaryVariantClassName;
+        set
+        {
+            if(string.IsNullOrEmpty(value))
+            {
+                _secondaryVariantClassName = DEFAULT_SECONDARY_VARIANT_CLASS_NAME;
+            }
+            else if (hasSpace(value))
+            {
+                throw new Exception();
+            }
+            else
+            {
+                _secondaryVariantClassName = value;
+            }
+        }
+    }
+
+    private const string DEFAULT_BACKGROUND_CLASS_NAME = "theme__surface";
+    private string _backgroundClassName = DEFAULT_BACKGROUND_CLASS_NAME;
+    public string BackgroundClassName
+    {
+        get => _backgroundClassName;
+        set
+        {
+            if(string.IsNullOrEmpty(value))
+            {
+                _backgroundClassName = DEFAULT_BACKGROUND_CLASS_NAME;
+            }
+            else if (hasSpace(value))
+            {
+                throw new Exception();
+            }
+            else
+            {
+                _backgroundClassName = value;
+            }
+        }
+    }
+
+    private const string DEFAULT_SURFACE_CLASS_NAME = "theme__surface";
+    private string _surfaceClassName = DEFAULT_SURFACE_CLASS_NAME;
+    public string SurfaceClassName
+    {
+        get => _surfaceClassName;
+        set
+        {
+            if(string.IsNullOrEmpty(value))
+            {
+                _surfaceClassName = DEFAULT_SURFACE_CLASS_NAME;
+            }
+            else if (hasSpace(value))
+            {
+                throw new Exception();
+            }
+            else
+            {
+                _surfaceClassName = value;
+            }
+        }
+    }
+
+    private const string DEFAULT_ERROR_CLASS_NAME = "theme__error";
+    private string _errorClassName = DEFAULT_ERROR_CLASS_NAME;
+    public string ErrorClassName
+    {
+        get => _errorClassName;
+        set
+        {
+            if(string.IsNullOrEmpty(value))
+            {
+                _errorClassName = DEFAULT_ERROR_CLASS_NAME;
+            }
+            else if (hasSpace(value))
+            {
+                throw new Exception();
+            }
+            else
+            {
+                _errorClassName = value;
+            }
+        }
+    }
 #pragma warning disable CS8618
     public Theme()
     {
@@ -145,6 +299,40 @@ public class Theme
         return sb.ToString();
     }
 
+    protected virtual string GenerateCssClass()
+    {
+        var sb = new StringBuilder();
+        sb.Append(GenerateCssClass(PrimaryClassName, Primary.IsEmpty() ? string.Empty : "--primary", OnPrimary.IsEmpty() ? string.Empty : "--on-primary"));
+        sb.Append(GenerateCssClass(PrimaryVariantClassName, PrimaryVariant.IsEmpty() ? string.Empty : "--primary-variant", OnPrimary.IsEmpty() ? string.Empty : "--on-primary-variant"));
+        sb.Append(GenerateCssClass(SecondaryClassName, Secondary.IsEmpty() ? string.Empty : "--secondary", OnSecondary.IsEmpty() ? string.Empty : "--on-secondary"));
+        sb.Append(GenerateCssClass(SecondaryVariantClassName, SecondaryVariant.IsEmpty() ? string.Empty : "--secondary-variant", OnSecondary.IsEmpty() ? string.Empty : "--on-secondary-variant"));
+        sb.Append(GenerateCssClass(BackgroundClassName, Background.IsEmpty() ? string.Empty : "--background", OnBackground.IsEmpty() ? string.Empty : "--on-background"));
+        sb.Append(GenerateCssClass(SurfaceClassName, Surface.IsEmpty() ? string.Empty : "--surface", OnSurface.IsEmpty() ? string.Empty : "--on-surface"));
+        sb.Append(GenerateCssClass(ErrorClassName, Error.IsEmpty() ? string.Empty : "--error", OnError.IsEmpty() ? string.Empty : "--on-error"));
+        return sb.ToString();
+    }
+
+    protected virtual string GenerateCssClass(string className, string backgroundVarName, string foregroundVarName)
+    {
+        var sb = new StringBuilder();
+        if (!string.IsNullOrEmpty(className) && !(string.IsNullOrEmpty(backgroundVarName) && string.IsNullOrEmpty(foregroundVarName)))
+        {
+            sb.Append($".{className} ");
+            sb.AppendLine("{");
+            if (!string.IsNullOrEmpty(backgroundVarName))
+            {
+                sb.AppendLine($"background-color : var({backgroundVarName});");
+            }
+            if (!string.IsNullOrEmpty(foregroundVarName))
+            {
+                sb.AppendLine($"color : var({foregroundVarName});");
+            }
+            sb.AppendLine("}");
+        }
+        return sb.ToString();
+    }
+
+
     public string GetStyleTag()
     {
         var sb = new StringBuilder();
@@ -160,6 +348,7 @@ public class Theme
         sb.AppendLine("{");
         sb.AppendLine(GenerateStyle());
         sb.AppendLine("}");
+        sb.AppendLine(GenerateCssClass());
         sb.AppendLine("</style>");
         return sb.ToString();
     }
@@ -190,4 +379,6 @@ public class Theme
     {
         Changed?.Invoke(this, EventArgs.Empty);
     }
+
+    private bool hasSpace(string value) => Regex.Match(value, " ").Success;
 }
