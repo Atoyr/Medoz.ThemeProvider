@@ -370,7 +370,8 @@ public class Theme
         this.Background = from.Background;
         this.OnBackground = from.OnBackground;
         this.Surface = from.Surface;
-        this.OnSurface = from.OnSurface; this.Error = from.Error;
+        this.OnSurface = from.OnSurface;
+        this.Error = from.Error;
         this.OnError = from.OnError;
     }
 
